@@ -1,0 +1,75 @@
+{
+  "configVersion": "1.0.1",
+  "description": "Three sequential Lighthouse navigation audits for the production home and NFT detail route, using the built-in NFT mock catalog.",
+  "runsPerPageAndProfile": 3,
+  "baseUrl": "http://127.0.0.1:4173",
+  "pages": [
+    {
+      "id": "home",
+      "path": "/",
+      "scenario": "Default marketplace state; built-in NFT mock catalog; no search/filter changes."
+    },
+    {
+      "id": "nft-detail",
+      "path": "/nft/1",
+      "scenario": "Direct-load NFT detail route for Emerald Ape #042 (mock NFT id 1); App selects its mobile detail layout below 768 CSS px and desktop detail layout at/above 768 CSS px."
+    }
+  ],
+  "profiles": {
+    "mobile": {
+      "formFactor": "mobile",
+      "screenEmulation": {
+        "mobile": true,
+        "width": 412,
+        "height": 823,
+        "deviceScaleFactor": 1.75,
+        "disabled": false
+      },
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.56,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      }
+    },
+    "desktop": {
+      "formFactor": "desktop",
+      "screenEmulation": {
+        "mobile": false,
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "disabled": false
+      },
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      }
+    }
+  },
+  "categories": ["performance", "accessibility", "best-practices", "seo"],
+  "targets": {
+    "performance": 90,
+    "accessibility": 95,
+    "best-practices": 95,
+    "seo": 90
+  },
+  "measurements": ["LCP", "CLS", "TBT"],
+  "execution": {
+    "buildCommand": "npm run build",
+    "serverCommand": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
+    "serverHost": "127.0.0.1",
+    "serverPort": 4173,
+    "oneChromeProcessPerSample": true,
+    "browserCache": "fresh Chrome profile per sample; Lighthouse storage reset enabled",
+    "appAssets": "No requests blocked; production app and its delivered images/styles/fonts run normally"
+  }
+}

@@ -1,0 +1,3417 @@
+{
+  "metadata": {
+    "runId": "2026-10-03T21-43-34-703Z",
+    "configurationVersion": "1.0.0",
+    "configurationFile": "audit-config.json",
+    "buildFingerprint": "851746806974de948a7aadc10b5e0b2b28a6c5fa94bfc720189927ef64afff10",
+    "gitRevision": "unavailable",
+    "gitWorkingTree": "unavailable (workspace has no .git metadata)",
+    "gitStatus": "unavailable (workspace has no .git metadata)",
+    "tools": {
+      "lighthouse": "12.6.1",
+      "chrome-launcher": "0.13.4",
+      "vite": "8.3.2",
+      "@playwright/test": "1.63.0",
+      "chrome": "Chrome/152.0.7977.84"
+    },
+    "environment": {
+      "node": "v24.14.1",
+      "npm": "11.11.0",
+      "platform": "win32",
+      "release": "10.0.26200",
+      "arch": "x64",
+      "cpuCount": 8,
+      "cpuModels": [
+        "Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz"
+      ],
+      "totalMemoryBytes": 16928935936,
+      "locale": "en-US"
+    },
+    "execution": {
+      "startedAt": "2026-10-03T21:43:34.704Z",
+      "finishedAt": "2026-10-03T21:46:48.679Z",
+      "auditCount": 12,
+      "order": "sequential: mobile home, mobile NFT detail, desktop home, desktop NFT detail; three samples each",
+      "chromeFlags": [
+        "--headless=new",
+        "--no-first-run",
+        "--no-default-browser-check"
+      ],
+      "storageReset": true,
+      "appAssetsBlocked": false
+    }
+  },
+  "configuration": {
+    "configVersion": "1.0.0",
+    "description": "Three sequential Lighthouse navigation audits for the production home and NFT detail route, using the built-in NFT mock catalog.",
+    "runsPerPageAndProfile": 3,
+    "baseUrl": "http://127.0.0.1:4173",
+    "pages": [
+      {
+        "id": "home",
+        "path": "/",
+        "scenario": "Default marketplace state; built-in NFT mock catalog; no search/filter changes."
+      },
+      {
+        "id": "nft-detail",
+        "path": "/nft/1",
+        "scenario": "Direct-load desktop NFT detail route for Emerald Ape #042 (mock NFT id 1)."
+      }
+    ],
+    "profiles": {
+      "mobile": {
+        "formFactor": "mobile",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "throttlingMethod": "simulate",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.56,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        }
+      },
+      "desktop": {
+        "formFactor": "desktop",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1440,
+          "height": 900,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "throttlingMethod": "simulate",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        }
+      }
+    },
+    "categories": [
+      "performance",
+      "accessibility",
+      "best-practices",
+      "seo"
+    ],
+    "targets": {
+      "performance": 90,
+      "accessibility": 95,
+      "best-practices": 95,
+      "seo": 90
+    },
+    "measurements": [
+      "LCP",
+      "CLS",
+      "TBT"
+    ],
+    "execution": {
+      "buildCommand": "npm run build",
+      "serverCommand": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
+      "serverHost": "127.0.0.1",
+      "serverPort": 4173,
+      "oneChromeProcessPerSample": true,
+      "browserCache": "fresh Chrome profile per sample; Lighthouse storage reset enabled",
+      "appAssets": "No requests blocked; production app and its delivered images/styles/fonts run normally"
+    }
+  },
+  "measurements": [
+    {
+      "profile": "mobile",
+      "page": "home",
+      "path": "/",
+      "run": 1,
+      "url": "http://127.0.0.1:4173/",
+      "fetchTime": "2026-10-03T21:43:38.475Z",
+      "reportHtml": "mobile/home/run-01.report.html",
+      "reportJson": "mobile/home/run-01.report.json",
+      "categories": {
+        "performance": 74,
+        "accessibility": 95,
+        "best-practices": 96,
+        "seo": 83
+      },
+      "metrics": {
+        "lcpMs": 42967.30375,
+        "cls": 0,
+        "tbtMs": 18
+      },
+      "lcpElement": {
+        "label": "Emerald Ape #042",
+        "selector": "article.min-w-0 > div.relative > button.block > img.aspect-square",
+        "source": "/assets/Image-3LZgOEu9.png",
+        "phases": {
+          "TTFB": 457.10125,
+          "Load Delay": 11068.96742756622,
+          "Load Time": 3990.5299407849016,
+          "Render Delay": 27450.70513164888
+        }
+      },
+      "assets": [
+        {
+          "url": "http://127.0.0.1:4173/assets/Image-3LZgOEu9.png",
+          "resourceType": "Image",
+          "transferBytes": 1885706,
+          "resourceBytes": 1885435,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image2-CfwfEi4n.png",
+          "resourceType": "Image",
+          "transferBytes": 2068797,
+          "resourceBytes": 2068526,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image3-4rfD07eb.png",
+          "resourceType": "Image",
+          "transferBytes": 2027607,
+          "resourceBytes": 2027336,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image4-uhJLsIjn.png",
+          "resourceType": "Image",
+          "transferBytes": 1978871,
+          "resourceBytes": 1978600,
+          "statusCode": 200
+        }
+      ],
+      "failedRequests": [],
+      "failedAudits": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0,
+          "displayValue": "43.0 s",
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0,
+          "displayValue": "43.0 s",
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://developer.chrome.com/docs/lighthouse/performance/interactive/)."
+        },
+        {
+          "id": "largest-contentful-paint-element",
+          "title": "Largest Contentful Paint element",
+          "score": 0,
+          "displayValue": "42,970 ms",
+          "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "prioritize-lcp-image",
+          "title": "Preload Largest Contentful Paint image",
+          "score": 0,
+          "displayValue": "Est savings of 2,450 ms",
+          "description": "If the LCP element is dynamically added to the page, you should preload the image in order to improve LCP. [Learn more about preloading LCP elements](https://web.dev/articles/optimize-lcp#optimize_when_the_resource_is_discovered)."
+        },
+        {
+          "id": "aria-prohibited-attr",
+          "title": "Elements use prohibited ARIA attributes",
+          "score": 0,
+          "displayValue": "",
+          "description": "Using ARIA attributes in roles where they are prohibited can mean that important information is not communicated to users of assistive technologies. [Learn more about prohibited ARIA roles](https://dequeuniversity.com/rules/axe/4.10/aria-prohibited-attr)."
+        },
+        {
+          "id": "total-byte-weight",
+          "title": "Avoid enormous network payloads",
+          "score": 0.5,
+          "displayValue": "Total size was 7,927 KiB",
+          "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn how to reduce payload sizes](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
+        },
+        {
+          "id": "render-blocking-resources",
+          "title": "Eliminate render-blocking resources",
+          "score": 0.5,
+          "displayValue": "Est savings of 0 ms",
+          "description": "Resources are blocking the first paint of your page. Consider delivering critical JS/CSS inline and deferring all non-critical JS/styles. [Learn how to eliminate render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)."
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 71 KiB",
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "modern-image-formats",
+          "title": "Serve images in next-gen formats",
+          "score": 0,
+          "displayValue": "Est savings of 7,196 KiB",
+          "description": "Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more about modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)."
+        },
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "score": 0,
+          "displayValue": "Est savings of 7,356 KiB",
+          "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn how to size images](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)."
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "score": 0,
+          "displayValue": "",
+          "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about the meta description](https://developer.chrome.com/docs/lighthouse/seo/meta-description/)."
+        },
+        {
+          "id": "font-size",
+          "title": "Document doesn't use legible font sizes",
+          "score": 0,
+          "displayValue": "53.69% legible text",
+          "description": "Font sizes less than 12px are too small to be legible and require mobile visitors to “pinch to zoom” in order to read. Strive to have >60% of page text ≥12px. [Learn more about legible font sizes](https://developer.chrome.com/docs/lighthouse/seo/font-size/)."
+        },
+        {
+          "id": "robots-txt",
+          "title": "robots.txt is not valid",
+          "score": 0,
+          "displayValue": "14 errors found",
+          "description": "If your robots.txt file is malformed, crawlers may not be able to understand how you want your website to be crawled or indexed. [Learn more about robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
+        },
+        {
+          "id": "dom-size-insight",
+          "title": "Optimize DOM size",
+          "score": 0,
+          "displayValue": "",
+          "description": "A large DOM can increase the duration of style calculations and layout reflows, impacting page responsiveness. A large DOM will also increase memory usage. [Learn how to avoid an excessive DOM size](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)."
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0,
+          "displayValue": "Est savings of 7,755 KiB",
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. [Learn more about optimizing image size](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)"
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "score": 0,
+          "displayValue": "",
+          "description": "Optimize LCP by making the LCP image [discoverable](https://web.dev/articles/optimize-lcp#1_eliminate_resource_load_delay) from the HTML immediately, and [avoiding lazy-loading](https://web.dev/articles/lcp-lazy-loading)"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "displayValue": "",
+          "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render blocking requests",
+          "score": 0,
+          "displayValue": "",
+          "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://web.dev/learn/performance/understanding-the-critical-path#render-blocking_resources) can move these network requests out of the critical path."
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "home",
+      "path": "/",
+      "run": 2,
+      "url": "http://127.0.0.1:4173/",
+      "fetchTime": "2026-10-03T21:43:49.715Z",
+      "reportHtml": "mobile/home/run-02.report.html",
+      "reportJson": "mobile/home/run-02.report.json",
+      "categories": {
+        "performance": 74,
+        "accessibility": 95,
+        "best-practices": 96,
+        "seo": 83
+      },
+      "metrics": {
+        "lcpMs": 43077.60015,
+        "cls": 0,
+        "tbtMs": 11
+      },
+      "lcpElement": {
+        "label": "Emerald Ape #042",
+        "selector": "article.min-w-0 > div.relative > button.block > img.aspect-square",
+        "source": "/assets/Image-3LZgOEu9.png",
+        "phases": {
+          "TTFB": 459.20005,
+          "Load Delay": 9770.182947376205,
+          "Load Time": 19114.965211266976,
+          "Render Delay": 13733.251941356819
+        }
+      },
+      "assets": [
+        {
+          "url": "http://127.0.0.1:4173/assets/Image-3LZgOEu9.png",
+          "resourceType": "Image",
+          "transferBytes": 1885706,
+          "resourceBytes": 1885435,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image2-CfwfEi4n.png",
+          "resourceType": "Image",
+          "transferBytes": 2068797,
+          "resourceBytes": 2068526,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image3-4rfD07eb.png",
+          "resourceType": "Image",
+          "transferBytes": 2027607,
+          "resourceBytes": 2027336,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image4-uhJLsIjn.png",
+          "resourceType": "Image",
+          "transferBytes": 1978871,
+          "resourceBytes": 1978600,
+          "statusCode": 200
+        }
+      ],
+      "failedRequests": [],
+      "failedAudits": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0,
+          "displayValue": "43.1 s",
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0,
+          "displayValue": "43.1 s",
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://developer.chrome.com/docs/lighthouse/performance/interactive/)."
+        },
+        {
+          "id": "largest-contentful-paint-element",
+          "title": "Largest Contentful Paint element",
+          "score": 0,
+          "displayValue": "43,080 ms",
+          "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "prioritize-lcp-image",
+          "title": "Preload Largest Contentful Paint image",
+          "score": 0,
+          "displayValue": "Est savings of 2,560 ms",
+          "description": "If the LCP element is dynamically added to the page, you should preload the image in order to improve LCP. [Learn more about preloading LCP elements](https://web.dev/articles/optimize-lcp#optimize_when_the_resource_is_discovered)."
+        },
+        {
+          "id": "aria-prohibited-attr",
+          "title": "Elements use prohibited ARIA attributes",
+          "score": 0,
+          "displayValue": "",
+          "description": "Using ARIA attributes in roles where they are prohibited can mean that important information is not communicated to users of assistive technologies. [Learn more about prohibited ARIA roles](https://dequeuniversity.com/rules/axe/4.10/aria-prohibited-attr)."
+        },
+        {
+          "id": "total-byte-weight",
+          "title": "Avoid enormous network payloads",
+          "score": 0.5,
+          "displayValue": "Total size was 7,927 KiB",
+          "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn how to reduce payload sizes](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
+        },
+        {
+          "id": "render-blocking-resources",
+          "title": "Eliminate render-blocking resources",
+          "score": 0.5,
+          "displayValue": "Est savings of 0 ms",
+          "description": "Resources are blocking the first paint of your page. Consider delivering critical JS/CSS inline and deferring all non-critical JS/styles. [Learn how to eliminate render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)."
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 71 KiB",
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "modern-image-formats",
+          "title": "Serve images in next-gen formats",
+          "score": 0,
+          "displayValue": "Est savings of 7,196 KiB",
+          "description": "Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more about modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)."
+        },
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "score": 0,
+          "displayValue": "Est savings of 7,356 KiB",
+          "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn how to size images](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)."
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "score": 0,
+          "displayValue": "",
+          "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about the meta description](https://developer.chrome.com/docs/lighthouse/seo/meta-description/)."
+        },
+        {
+          "id": "font-size",
+          "title": "Document doesn't use legible font sizes",
+          "score": 0,
+          "displayValue": "53.69% legible text",
+          "description": "Font sizes less than 12px are too small to be legible and require mobile visitors to “pinch to zoom” in order to read. Strive to have >60% of page text ≥12px. [Learn more about legible font sizes](https://developer.chrome.com/docs/lighthouse/seo/font-size/)."
+        },
+        {
+          "id": "robots-txt",
+          "title": "robots.txt is not valid",
+          "score": 0,
+          "displayValue": "14 errors found",
+          "description": "If your robots.txt file is malformed, crawlers may not be able to understand how you want your website to be crawled or indexed. [Learn more about robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0,
+          "displayValue": "Est savings of 7,755 KiB",
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. [Learn more about optimizing image size](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)"
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "score": 0,
+          "displayValue": "",
+          "description": "Optimize LCP by making the LCP image [discoverable](https://web.dev/articles/optimize-lcp#1_eliminate_resource_load_delay) from the HTML immediately, and [avoiding lazy-loading](https://web.dev/articles/lcp-lazy-loading)"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "displayValue": "",
+          "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render blocking requests",
+          "score": 0,
+          "displayValue": "",
+          "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://web.dev/learn/performance/understanding-the-critical-path#render-blocking_resources) can move these network requests out of the critical path."
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "home",
+      "path": "/",
+      "run": 3,
+      "url": "http://127.0.0.1:4173/",
+      "fetchTime": "2026-10-03T21:44:01.082Z",
+      "reportHtml": "mobile/home/run-03.report.html",
+      "reportJson": "mobile/home/run-03.report.json",
+      "categories": {
+        "performance": 74,
+        "accessibility": 95,
+        "best-practices": 96,
+        "seo": 83
+      },
+      "metrics": {
+        "lcpMs": 42911.3637,
+        "cls": 0,
+        "tbtMs": 15
+      },
+      "lcpElement": {
+        "label": "Emerald Ape #042",
+        "selector": "article.min-w-0 > div.relative > button.block > img.aspect-square",
+        "source": "/assets/Image-3LZgOEu9.png",
+        "phases": {
+          "TTFB": 453.7879,
+          "Load Delay": 9868.442263555093,
+          "Load Time": 2959.0989659341176,
+          "Render Delay": 29630.03457051079
+        }
+      },
+      "assets": [
+        {
+          "url": "http://127.0.0.1:4173/assets/Image-3LZgOEu9.png",
+          "resourceType": "Image",
+          "transferBytes": 1885706,
+          "resourceBytes": 1885435,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image2-CfwfEi4n.png",
+          "resourceType": "Image",
+          "transferBytes": 2068797,
+          "resourceBytes": 2068526,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image3-4rfD07eb.png",
+          "resourceType": "Image",
+          "transferBytes": 2027607,
+          "resourceBytes": 2027336,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image4-uhJLsIjn.png",
+          "resourceType": "Image",
+          "transferBytes": 1978871,
+          "resourceBytes": 1978600,
+          "statusCode": 200
+        }
+      ],
+      "failedRequests": [],
+      "failedAudits": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0,
+          "displayValue": "42.9 s",
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0,
+          "displayValue": "42.9 s",
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://developer.chrome.com/docs/lighthouse/performance/interactive/)."
+        },
+        {
+          "id": "largest-contentful-paint-element",
+          "title": "Largest Contentful Paint element",
+          "score": 0,
+          "displayValue": "42,910 ms",
+          "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "prioritize-lcp-image",
+          "title": "Preload Largest Contentful Paint image",
+          "score": 0,
+          "displayValue": "Est savings of 2,400 ms",
+          "description": "If the LCP element is dynamically added to the page, you should preload the image in order to improve LCP. [Learn more about preloading LCP elements](https://web.dev/articles/optimize-lcp#optimize_when_the_resource_is_discovered)."
+        },
+        {
+          "id": "aria-prohibited-attr",
+          "title": "Elements use prohibited ARIA attributes",
+          "score": 0,
+          "displayValue": "",
+          "description": "Using ARIA attributes in roles where they are prohibited can mean that important information is not communicated to users of assistive technologies. [Learn more about prohibited ARIA roles](https://dequeuniversity.com/rules/axe/4.10/aria-prohibited-attr)."
+        },
+        {
+          "id": "total-byte-weight",
+          "title": "Avoid enormous network payloads",
+          "score": 0.5,
+          "displayValue": "Total size was 7,927 KiB",
+          "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn how to reduce payload sizes](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
+        },
+        {
+          "id": "render-blocking-resources",
+          "title": "Eliminate render-blocking resources",
+          "score": 0.5,
+          "displayValue": "Est savings of 0 ms",
+          "description": "Resources are blocking the first paint of your page. Consider delivering critical JS/CSS inline and deferring all non-critical JS/styles. [Learn how to eliminate render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)."
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 71 KiB",
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "modern-image-formats",
+          "title": "Serve images in next-gen formats",
+          "score": 0,
+          "displayValue": "Est savings of 7,196 KiB",
+          "description": "Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more about modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)."
+        },
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "score": 0,
+          "displayValue": "Est savings of 7,356 KiB",
+          "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn how to size images](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)."
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "score": 0,
+          "displayValue": "",
+          "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about the meta description](https://developer.chrome.com/docs/lighthouse/seo/meta-description/)."
+        },
+        {
+          "id": "font-size",
+          "title": "Document doesn't use legible font sizes",
+          "score": 0,
+          "displayValue": "53.69% legible text",
+          "description": "Font sizes less than 12px are too small to be legible and require mobile visitors to “pinch to zoom” in order to read. Strive to have >60% of page text ≥12px. [Learn more about legible font sizes](https://developer.chrome.com/docs/lighthouse/seo/font-size/)."
+        },
+        {
+          "id": "robots-txt",
+          "title": "robots.txt is not valid",
+          "score": 0,
+          "displayValue": "14 errors found",
+          "description": "If your robots.txt file is malformed, crawlers may not be able to understand how you want your website to be crawled or indexed. [Learn more about robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0,
+          "displayValue": "Est savings of 7,755 KiB",
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. [Learn more about optimizing image size](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)"
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "score": 0,
+          "displayValue": "",
+          "description": "Optimize LCP by making the LCP image [discoverable](https://web.dev/articles/optimize-lcp#1_eliminate_resource_load_delay) from the HTML immediately, and [avoiding lazy-loading](https://web.dev/articles/lcp-lazy-loading)"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "displayValue": "",
+          "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render blocking requests",
+          "score": 0,
+          "displayValue": "",
+          "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://web.dev/learn/performance/understanding-the-critical-path#render-blocking_resources) can move these network requests out of the critical path."
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "nft-detail",
+      "path": "/nft/1",
+      "run": 1,
+      "url": "http://127.0.0.1:4173/nft/1",
+      "fetchTime": "2026-10-03T21:44:13.686Z",
+      "reportHtml": "mobile/nft-detail/run-01.report.html",
+      "reportJson": "mobile/nft-detail/run-01.report.json",
+      "categories": {
+        "performance": 73,
+        "accessibility": 100,
+        "best-practices": 96,
+        "seo": 83
+      },
+      "metrics": {
+        "lcpMs": 26043.6159,
+        "cls": 0,
+        "tbtMs": 91
+      },
+      "lcpElement": {
+        "label": "Emerald Ape #042",
+        "selector": "main > section.grid > div.relative > img.aspect-square",
+        "source": "/assets/Image-3LZgOEu9.png",
+        "phases": {
+          "TTFB": 456.2053,
+          "Load Delay": 11452.003033348155,
+          "Load Time": 2575.5234380497277,
+          "Render Delay": 11559.884128602118
+        }
+      },
+      "assets": [
+        {
+          "url": "http://127.0.0.1:4173/assets/Image-3LZgOEu9.png",
+          "resourceType": "Image",
+          "transferBytes": 1885706,
+          "resourceBytes": 1885435,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image2-CfwfEi4n.png",
+          "resourceType": "Image",
+          "transferBytes": 2068797,
+          "resourceBytes": 2068526,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image3-4rfD07eb.png",
+          "resourceType": "Image",
+          "transferBytes": 2027607,
+          "resourceBytes": 2027336,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image4-uhJLsIjn.png",
+          "resourceType": "Image",
+          "transferBytes": 1978871,
+          "resourceBytes": 1978600,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/geist-latin-wght-normal-BgDaEnEv.woff2",
+          "resourceType": "Font",
+          "transferBytes": 29720,
+          "resourceBytes": 29400,
+          "statusCode": 200
+        }
+      ],
+      "failedRequests": [],
+      "failedAudits": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "score": 0.85,
+          "displayValue": "2.0 s",
+          "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0,
+          "displayValue": "26.0 s",
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0,
+          "displayValue": "27.5 s",
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://developer.chrome.com/docs/lighthouse/performance/interactive/)."
+        },
+        {
+          "id": "largest-contentful-paint-element",
+          "title": "Largest Contentful Paint element",
+          "score": 0,
+          "displayValue": "26,040 ms",
+          "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "prioritize-lcp-image",
+          "title": "Preload Largest Contentful Paint image",
+          "score": 0,
+          "displayValue": "Est savings of 2,410 ms",
+          "description": "If the LCP element is dynamically added to the page, you should preload the image in order to improve LCP. [Learn more about preloading LCP elements](https://web.dev/articles/optimize-lcp#optimize_when_the_resource_is_discovered)."
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "title": "Elements with visible text labels do not have matching accessible names.",
+          "score": 0,
+          "displayValue": "",
+          "description": "Visible text labels that do not match the accessible name can result in a confusing experience for screen reader users. [Learn more about accessible names](https://dequeuniversity.com/rules/axe/4.10/label-content-name-mismatch)."
+        },
+        {
+          "id": "total-byte-weight",
+          "title": "Avoid enormous network payloads",
+          "score": 0.5,
+          "displayValue": "Total size was 7,956 KiB",
+          "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn how to reduce payload sizes](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
+        },
+        {
+          "id": "render-blocking-resources",
+          "title": "Eliminate render-blocking resources",
+          "score": 0.5,
+          "displayValue": "Est savings of 0 ms",
+          "description": "Resources are blocking the first paint of your page. Consider delivering critical JS/CSS inline and deferring all non-critical JS/styles. [Learn how to eliminate render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)."
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 65 KiB",
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "modern-image-formats",
+          "title": "Serve images in next-gen formats",
+          "score": 0,
+          "displayValue": "Est savings of 7,196 KiB",
+          "description": "Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more about modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)."
+        },
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "score": 0,
+          "displayValue": "Est savings of 7,070 KiB",
+          "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn how to size images](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)."
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "score": 0,
+          "displayValue": "",
+          "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about the meta description](https://developer.chrome.com/docs/lighthouse/seo/meta-description/)."
+        },
+        {
+          "id": "font-size",
+          "title": "Document doesn't use legible font sizes",
+          "score": 0,
+          "displayValue": "26.14% legible text",
+          "description": "Font sizes less than 12px are too small to be legible and require mobile visitors to “pinch to zoom” in order to read. Strive to have >60% of page text ≥12px. [Learn more about legible font sizes](https://developer.chrome.com/docs/lighthouse/seo/font-size/)."
+        },
+        {
+          "id": "robots-txt",
+          "title": "robots.txt is not valid",
+          "score": 0,
+          "displayValue": "14 errors found",
+          "description": "If your robots.txt file is malformed, crawlers may not be able to understand how you want your website to be crawled or indexed. [Learn more about robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
+        },
+        {
+          "id": "dom-size-insight",
+          "title": "Optimize DOM size",
+          "score": 0,
+          "displayValue": "",
+          "description": "A large DOM can increase the duration of style calculations and layout reflows, impacting page responsiveness. A large DOM will also increase memory usage. [Learn how to avoid an excessive DOM size](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)."
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0,
+          "displayValue": "Est savings of 7,742 KiB",
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. [Learn more about optimizing image size](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)"
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "score": 0,
+          "displayValue": "",
+          "description": "Optimize LCP by making the LCP image [discoverable](https://web.dev/articles/optimize-lcp#1_eliminate_resource_load_delay) from the HTML immediately, and [avoiding lazy-loading](https://web.dev/articles/lcp-lazy-loading)"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "displayValue": "",
+          "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render blocking requests",
+          "score": 0,
+          "displayValue": "",
+          "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://web.dev/learn/performance/understanding-the-critical-path#render-blocking_resources) can move these network requests out of the critical path."
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "nft-detail",
+      "path": "/nft/1",
+      "run": 2,
+      "url": "http://127.0.0.1:4173/nft/1",
+      "fetchTime": "2026-10-03T21:44:34.389Z",
+      "reportHtml": "mobile/nft-detail/run-02.report.html",
+      "reportJson": "mobile/nft-detail/run-02.report.json",
+      "categories": {
+        "performance": 74,
+        "accessibility": 100,
+        "best-practices": 96,
+        "seo": 83
+      },
+      "metrics": {
+        "lcpMs": 26103.6688,
+        "cls": 0,
+        "tbtMs": 75
+      },
+      "lcpElement": {
+        "label": "Emerald Ape #042",
+        "selector": "main > section.grid > div.relative > img.aspect-square",
+        "source": "/assets/Image-3LZgOEu9.png",
+        "phases": {
+          "TTFB": 457.8896,
+          "Load Delay": 9658.138453010624,
+          "Load Time": 4487.880652752587,
+          "Render Delay": 11499.760094236788
+        }
+      },
+      "assets": [
+        {
+          "url": "http://127.0.0.1:4173/assets/Image-3LZgOEu9.png",
+          "resourceType": "Image",
+          "transferBytes": 1885706,
+          "resourceBytes": 1885435,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image2-CfwfEi4n.png",
+          "resourceType": "Image",
+          "transferBytes": 2068797,
+          "resourceBytes": 2068526,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image3-4rfD07eb.png",
+          "resourceType": "Image",
+          "transferBytes": 2027607,
+          "resourceBytes": 2027336,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image4-uhJLsIjn.png",
+          "resourceType": "Image",
+          "transferBytes": 1978871,
+          "resourceBytes": 1978600,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/geist-latin-wght-normal-BgDaEnEv.woff2",
+          "resourceType": "Font",
+          "transferBytes": 29720,
+          "resourceBytes": 29400,
+          "statusCode": 200
+        }
+      ],
+      "failedRequests": [],
+      "failedAudits": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "score": 0.88,
+          "displayValue": "1.9 s",
+          "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0,
+          "displayValue": "26.1 s",
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0,
+          "displayValue": "27.6 s",
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://developer.chrome.com/docs/lighthouse/performance/interactive/)."
+        },
+        {
+          "id": "largest-contentful-paint-element",
+          "title": "Largest Contentful Paint element",
+          "score": 0,
+          "displayValue": "26,100 ms",
+          "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "prioritize-lcp-image",
+          "title": "Preload Largest Contentful Paint image",
+          "score": 0,
+          "displayValue": "Est savings of 2,610 ms",
+          "description": "If the LCP element is dynamically added to the page, you should preload the image in order to improve LCP. [Learn more about preloading LCP elements](https://web.dev/articles/optimize-lcp#optimize_when_the_resource_is_discovered)."
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "title": "Elements with visible text labels do not have matching accessible names.",
+          "score": 0,
+          "displayValue": "",
+          "description": "Visible text labels that do not match the accessible name can result in a confusing experience for screen reader users. [Learn more about accessible names](https://dequeuniversity.com/rules/axe/4.10/label-content-name-mismatch)."
+        },
+        {
+          "id": "total-byte-weight",
+          "title": "Avoid enormous network payloads",
+          "score": 0.5,
+          "displayValue": "Total size was 7,956 KiB",
+          "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn how to reduce payload sizes](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
+        },
+        {
+          "id": "render-blocking-resources",
+          "title": "Eliminate render-blocking resources",
+          "score": 0.5,
+          "displayValue": "Est savings of 0 ms",
+          "description": "Resources are blocking the first paint of your page. Consider delivering critical JS/CSS inline and deferring all non-critical JS/styles. [Learn how to eliminate render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)."
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 65 KiB",
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "modern-image-formats",
+          "title": "Serve images in next-gen formats",
+          "score": 0,
+          "displayValue": "Est savings of 7,196 KiB",
+          "description": "Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more about modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)."
+        },
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "score": 0,
+          "displayValue": "Est savings of 7,070 KiB",
+          "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn how to size images](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)."
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "score": 0,
+          "displayValue": "",
+          "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about the meta description](https://developer.chrome.com/docs/lighthouse/seo/meta-description/)."
+        },
+        {
+          "id": "font-size",
+          "title": "Document doesn't use legible font sizes",
+          "score": 0,
+          "displayValue": "26.14% legible text",
+          "description": "Font sizes less than 12px are too small to be legible and require mobile visitors to “pinch to zoom” in order to read. Strive to have >60% of page text ≥12px. [Learn more about legible font sizes](https://developer.chrome.com/docs/lighthouse/seo/font-size/)."
+        },
+        {
+          "id": "robots-txt",
+          "title": "robots.txt is not valid",
+          "score": 0,
+          "displayValue": "14 errors found",
+          "description": "If your robots.txt file is malformed, crawlers may not be able to understand how you want your website to be crawled or indexed. [Learn more about robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
+        },
+        {
+          "id": "dom-size-insight",
+          "title": "Optimize DOM size",
+          "score": 0,
+          "displayValue": "",
+          "description": "A large DOM can increase the duration of style calculations and layout reflows, impacting page responsiveness. A large DOM will also increase memory usage. [Learn how to avoid an excessive DOM size](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)."
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0,
+          "displayValue": "Est savings of 7,742 KiB",
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. [Learn more about optimizing image size](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)"
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "score": 0,
+          "displayValue": "",
+          "description": "Optimize LCP by making the LCP image [discoverable](https://web.dev/articles/optimize-lcp#1_eliminate_resource_load_delay) from the HTML immediately, and [avoiding lazy-loading](https://web.dev/articles/lcp-lazy-loading)"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "displayValue": "",
+          "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render blocking requests",
+          "score": 0,
+          "displayValue": "",
+          "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://web.dev/learn/performance/understanding-the-critical-path#render-blocking_resources) can move these network requests out of the critical path."
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "nft-detail",
+      "path": "/nft/1",
+      "run": 3,
+      "url": "http://127.0.0.1:4173/nft/1",
+      "fetchTime": "2026-10-03T21:44:55.730Z",
+      "reportHtml": "mobile/nft-detail/run-03.report.html",
+      "reportJson": "mobile/nft-detail/run-03.report.json",
+      "categories": {
+        "performance": 73,
+        "accessibility": 100,
+        "best-practices": 96,
+        "seo": 83
+      },
+      "metrics": {
+        "lcpMs": 26035.604699999996,
+        "cls": 0,
+        "tbtMs": 42
+      },
+      "lcpElement": {
+        "label": "Emerald Ape #042",
+        "selector": "main > section.grid > div.relative > img.aspect-square",
+        "source": "/assets/Image-3LZgOEu9.png",
+        "phases": {
+          "TTFB": 453.5349,
+          "Load Delay": 9453.569985121294,
+          "Load Time": 3026.9313268889746,
+          "Render Delay": 13101.568487989727
+        }
+      },
+      "assets": [
+        {
+          "url": "http://127.0.0.1:4173/assets/Image-3LZgOEu9.png",
+          "resourceType": "Image",
+          "transferBytes": 1885706,
+          "resourceBytes": 1885435,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image2-CfwfEi4n.png",
+          "resourceType": "Image",
+          "transferBytes": 2068797,
+          "resourceBytes": 2068526,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image3-4rfD07eb.png",
+          "resourceType": "Image",
+          "transferBytes": 2027607,
+          "resourceBytes": 2027336,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image4-uhJLsIjn.png",
+          "resourceType": "Image",
+          "transferBytes": 1978871,
+          "resourceBytes": 1978600,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/geist-latin-wght-normal-BgDaEnEv.woff2",
+          "resourceType": "Font",
+          "transferBytes": 29720,
+          "resourceBytes": 29400,
+          "statusCode": 200
+        }
+      ],
+      "failedRequests": [],
+      "failedAudits": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "score": 0.85,
+          "displayValue": "2.0 s",
+          "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0,
+          "displayValue": "26.0 s",
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0,
+          "displayValue": "27.5 s",
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://developer.chrome.com/docs/lighthouse/performance/interactive/)."
+        },
+        {
+          "id": "largest-contentful-paint-element",
+          "title": "Largest Contentful Paint element",
+          "score": 0,
+          "displayValue": "26,040 ms",
+          "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "prioritize-lcp-image",
+          "title": "Preload Largest Contentful Paint image",
+          "score": 0,
+          "displayValue": "Est savings of 2,400 ms",
+          "description": "If the LCP element is dynamically added to the page, you should preload the image in order to improve LCP. [Learn more about preloading LCP elements](https://web.dev/articles/optimize-lcp#optimize_when_the_resource_is_discovered)."
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "title": "Elements with visible text labels do not have matching accessible names.",
+          "score": 0,
+          "displayValue": "",
+          "description": "Visible text labels that do not match the accessible name can result in a confusing experience for screen reader users. [Learn more about accessible names](https://dequeuniversity.com/rules/axe/4.10/label-content-name-mismatch)."
+        },
+        {
+          "id": "total-byte-weight",
+          "title": "Avoid enormous network payloads",
+          "score": 0.5,
+          "displayValue": "Total size was 7,956 KiB",
+          "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn how to reduce payload sizes](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
+        },
+        {
+          "id": "render-blocking-resources",
+          "title": "Eliminate render-blocking resources",
+          "score": 0.5,
+          "displayValue": "Est savings of 0 ms",
+          "description": "Resources are blocking the first paint of your page. Consider delivering critical JS/CSS inline and deferring all non-critical JS/styles. [Learn how to eliminate render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)."
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 65 KiB",
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "modern-image-formats",
+          "title": "Serve images in next-gen formats",
+          "score": 0,
+          "displayValue": "Est savings of 7,196 KiB",
+          "description": "Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more about modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)."
+        },
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "score": 0,
+          "displayValue": "Est savings of 7,070 KiB",
+          "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn how to size images](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)."
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "score": 0,
+          "displayValue": "",
+          "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about the meta description](https://developer.chrome.com/docs/lighthouse/seo/meta-description/)."
+        },
+        {
+          "id": "font-size",
+          "title": "Document doesn't use legible font sizes",
+          "score": 0,
+          "displayValue": "26.14% legible text",
+          "description": "Font sizes less than 12px are too small to be legible and require mobile visitors to “pinch to zoom” in order to read. Strive to have >60% of page text ≥12px. [Learn more about legible font sizes](https://developer.chrome.com/docs/lighthouse/seo/font-size/)."
+        },
+        {
+          "id": "robots-txt",
+          "title": "robots.txt is not valid",
+          "score": 0,
+          "displayValue": "14 errors found",
+          "description": "If your robots.txt file is malformed, crawlers may not be able to understand how you want your website to be crawled or indexed. [Learn more about robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
+        },
+        {
+          "id": "dom-size-insight",
+          "title": "Optimize DOM size",
+          "score": 0,
+          "displayValue": "",
+          "description": "A large DOM can increase the duration of style calculations and layout reflows, impacting page responsiveness. A large DOM will also increase memory usage. [Learn how to avoid an excessive DOM size](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)."
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0,
+          "displayValue": "Est savings of 7,742 KiB",
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. [Learn more about optimizing image size](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)"
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "score": 0,
+          "displayValue": "",
+          "description": "Optimize LCP by making the LCP image [discoverable](https://web.dev/articles/optimize-lcp#1_eliminate_resource_load_delay) from the HTML immediately, and [avoiding lazy-loading](https://web.dev/articles/lcp-lazy-loading)"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "displayValue": "",
+          "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render blocking requests",
+          "score": 0,
+          "displayValue": "",
+          "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://web.dev/learn/performance/understanding-the-critical-path#render-blocking_resources) can move these network requests out of the critical path."
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "home",
+      "path": "/",
+      "run": 1,
+      "url": "http://127.0.0.1:4173/",
+      "fetchTime": "2026-10-03T21:45:10.521Z",
+      "reportHtml": "desktop/home/run-01.report.html",
+      "reportJson": "desktop/home/run-01.report.json",
+      "categories": {
+        "performance": 76,
+        "accessibility": 91,
+        "best-practices": 100,
+        "seo": 67
+      },
+      "metrics": {
+        "lcpMs": 6340.65515,
+        "cls": 0,
+        "tbtMs": 11
+      },
+      "lcpElement": {
+        "label": "NFT cover",
+        "selector": "main.space-y-10 > section.flex > div.w-[540px] > img.h-[420px]",
+        "source": "/assets/Image-3LZgOEu9.png",
+        "phases": {
+          "TTFB": 126.88505,
+          "Load Delay": 3762.2236570502114,
+          "Load Time": 899.8322429040295,
+          "Render Delay": 1551.7142000457588
+        }
+      },
+      "assets": [
+        {
+          "url": "http://127.0.0.1:4173/assets/Image-3LZgOEu9.png",
+          "resourceType": "Image",
+          "transferBytes": 1885706,
+          "resourceBytes": 1885435,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image4-uhJLsIjn.png",
+          "resourceType": "Image",
+          "transferBytes": 1978871,
+          "resourceBytes": 1978600,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image3-4rfD07eb.png",
+          "resourceType": "Image",
+          "transferBytes": 2027607,
+          "resourceBytes": 2027336,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image2-CfwfEi4n.png",
+          "resourceType": "Image",
+          "transferBytes": 2068797,
+          "resourceBytes": 2068526,
+          "statusCode": 200
+        }
+      ],
+      "failedRequests": [],
+      "failedAudits": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.03,
+          "displayValue": "6.3 s",
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.22,
+          "displayValue": "6.4 s",
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://developer.chrome.com/docs/lighthouse/performance/interactive/)."
+        },
+        {
+          "id": "largest-contentful-paint-element",
+          "title": "Largest Contentful Paint element",
+          "score": 0,
+          "displayValue": "6,340 ms",
+          "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "unsized-images",
+          "title": "Image elements do not have explicit `width` and `height`",
+          "score": 0.5,
+          "displayValue": "",
+          "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn how to set image dimensions](https://web.dev/articles/optimize-cls#images_without_dimensions)"
+        },
+        {
+          "id": "prioritize-lcp-image",
+          "title": "Preload Largest Contentful Paint image",
+          "score": 0,
+          "displayValue": "Est savings of 490 ms",
+          "description": "If the LCP element is dynamically added to the page, you should preload the image in order to improve LCP. [Learn more about preloading LCP elements](https://web.dev/articles/optimize-lcp#optimize_when_the_resource_is_discovered)."
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements do not have `[alt]` attributes",
+          "score": 0,
+          "displayValue": "",
+          "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about the `alt` attribute](https://dequeuniversity.com/rules/axe/4.10/image-alt)."
+        },
+        {
+          "id": "label",
+          "title": "Form elements do not have associated labels",
+          "score": 0,
+          "displayValue": "",
+          "description": "Labels ensure that form controls are announced properly by assistive technologies, like screen readers. [Learn more about form element labels](https://dequeuniversity.com/rules/axe/4.10/label)."
+        },
+        {
+          "id": "total-byte-weight",
+          "title": "Avoid enormous network payloads",
+          "score": 0.5,
+          "displayValue": "Total size was 7,929 KiB",
+          "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn how to reduce payload sizes](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
+        },
+        {
+          "id": "render-blocking-resources",
+          "title": "Eliminate render-blocking resources",
+          "score": 0.5,
+          "displayValue": "Est savings of 0 ms",
+          "description": "Resources are blocking the first paint of your page. Consider delivering critical JS/CSS inline and deferring all non-critical JS/styles. [Learn how to eliminate render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)."
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 58 KiB",
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "modern-image-formats",
+          "title": "Serve images in next-gen formats",
+          "score": 0,
+          "displayValue": "Est savings of 7,196 KiB",
+          "description": "Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more about modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)."
+        },
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "score": 0,
+          "displayValue": "Est savings of 7,207 KiB",
+          "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn how to size images](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)."
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "score": 0,
+          "displayValue": "",
+          "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about the meta description](https://developer.chrome.com/docs/lighthouse/seo/meta-description/)."
+        },
+        {
+          "id": "crawlable-anchors",
+          "title": "Links are not crawlable",
+          "score": 0,
+          "displayValue": "",
+          "description": "Search engines may use `href` attributes on links to crawl websites. Ensure that the `href` attribute of anchor elements links to an appropriate destination, so more pages of the site can be discovered. [Learn how to make links crawlable](https://support.google.com/webmasters/answer/9112205)"
+        },
+        {
+          "id": "robots-txt",
+          "title": "robots.txt is not valid",
+          "score": 0,
+          "displayValue": "14 errors found",
+          "description": "If your robots.txt file is malformed, crawlers may not be able to understand how you want your website to be crawled or indexed. [Learn more about robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
+        },
+        {
+          "id": "dom-size-insight",
+          "title": "Optimize DOM size",
+          "score": 0,
+          "displayValue": "",
+          "description": "A large DOM can increase the duration of style calculations and layout reflows, impacting page responsiveness. A large DOM will also increase memory usage. [Learn how to avoid an excessive DOM size](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)."
+        },
+        {
+          "id": "forced-reflow-insight",
+          "title": "Forced reflow",
+          "score": 0,
+          "displayValue": "",
+          "description": "Many APIs, typically reading layout geometry, force the rendering engine to pause script execution in order to calculate the style and layout. Learn more about [forced reflow](https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing#avoid-forced-synchronous-layouts) and its mitigations."
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0,
+          "displayValue": "Est savings of 7,651 KiB",
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. [Learn more about optimizing image size](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)"
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "score": 0,
+          "displayValue": "",
+          "description": "Optimize LCP by making the LCP image [discoverable](https://web.dev/articles/optimize-lcp#1_eliminate_resource_load_delay) from the HTML immediately, and [avoiding lazy-loading](https://web.dev/articles/lcp-lazy-loading)"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "displayValue": "",
+          "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render blocking requests",
+          "score": 0,
+          "displayValue": "",
+          "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://web.dev/learn/performance/understanding-the-critical-path#render-blocking_resources) can move these network requests out of the critical path."
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "home",
+      "path": "/",
+      "run": 2,
+      "url": "http://127.0.0.1:4173/",
+      "fetchTime": "2026-10-03T21:45:28.769Z",
+      "reportHtml": "desktop/home/run-02.report.html",
+      "reportJson": "desktop/home/run-02.report.json",
+      "categories": {
+        "performance": 76,
+        "accessibility": 91,
+        "best-practices": 100,
+        "seo": 67
+      },
+      "metrics": {
+        "lcpMs": 6348.88465,
+        "cls": 0.0003353100099175814,
+        "tbtMs": 10
+      },
+      "lcpElement": {
+        "label": "NFT cover",
+        "selector": "main.space-y-10 > section.flex > div.w-[540px] > img.h-[420px]",
+        "source": "/assets/Image-3LZgOEu9.png",
+        "phases": {
+          "TTFB": 132.96155,
+          "Load Delay": 3414.1657021449328,
+          "Load Time": 1661.4402633017771,
+          "Render Delay": 1140.31713455329
+        }
+      },
+      "assets": [
+        {
+          "url": "http://127.0.0.1:4173/assets/Image-3LZgOEu9.png",
+          "resourceType": "Image",
+          "transferBytes": 1885706,
+          "resourceBytes": 1885435,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image4-uhJLsIjn.png",
+          "resourceType": "Image",
+          "transferBytes": 1978871,
+          "resourceBytes": 1978600,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image3-4rfD07eb.png",
+          "resourceType": "Image",
+          "transferBytes": 2027607,
+          "resourceBytes": 2027336,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image2-CfwfEi4n.png",
+          "resourceType": "Image",
+          "transferBytes": 2068797,
+          "resourceBytes": 2068526,
+          "statusCode": 200
+        }
+      ],
+      "failedRequests": [],
+      "failedAudits": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.03,
+          "displayValue": "6.3 s",
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.22,
+          "displayValue": "6.4 s",
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://developer.chrome.com/docs/lighthouse/performance/interactive/)."
+        },
+        {
+          "id": "largest-contentful-paint-element",
+          "title": "Largest Contentful Paint element",
+          "score": 0,
+          "displayValue": "6,350 ms",
+          "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "unsized-images",
+          "title": "Image elements do not have explicit `width` and `height`",
+          "score": 0.5,
+          "displayValue": "",
+          "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn how to set image dimensions](https://web.dev/articles/optimize-cls#images_without_dimensions)"
+        },
+        {
+          "id": "prioritize-lcp-image",
+          "title": "Preload Largest Contentful Paint image",
+          "score": 0,
+          "displayValue": "Est savings of 460 ms",
+          "description": "If the LCP element is dynamically added to the page, you should preload the image in order to improve LCP. [Learn more about preloading LCP elements](https://web.dev/articles/optimize-lcp#optimize_when_the_resource_is_discovered)."
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements do not have `[alt]` attributes",
+          "score": 0,
+          "displayValue": "",
+          "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about the `alt` attribute](https://dequeuniversity.com/rules/axe/4.10/image-alt)."
+        },
+        {
+          "id": "label",
+          "title": "Form elements do not have associated labels",
+          "score": 0,
+          "displayValue": "",
+          "description": "Labels ensure that form controls are announced properly by assistive technologies, like screen readers. [Learn more about form element labels](https://dequeuniversity.com/rules/axe/4.10/label)."
+        },
+        {
+          "id": "total-byte-weight",
+          "title": "Avoid enormous network payloads",
+          "score": 0.5,
+          "displayValue": "Total size was 7,929 KiB",
+          "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn how to reduce payload sizes](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
+        },
+        {
+          "id": "render-blocking-resources",
+          "title": "Eliminate render-blocking resources",
+          "score": 0.5,
+          "displayValue": "Est savings of 0 ms",
+          "description": "Resources are blocking the first paint of your page. Consider delivering critical JS/CSS inline and deferring all non-critical JS/styles. [Learn how to eliminate render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)."
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 58 KiB",
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "modern-image-formats",
+          "title": "Serve images in next-gen formats",
+          "score": 0,
+          "displayValue": "Est savings of 7,196 KiB",
+          "description": "Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more about modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)."
+        },
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "score": 0,
+          "displayValue": "Est savings of 7,207 KiB",
+          "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn how to size images](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)."
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "score": 0,
+          "displayValue": "",
+          "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about the meta description](https://developer.chrome.com/docs/lighthouse/seo/meta-description/)."
+        },
+        {
+          "id": "crawlable-anchors",
+          "title": "Links are not crawlable",
+          "score": 0,
+          "displayValue": "",
+          "description": "Search engines may use `href` attributes on links to crawl websites. Ensure that the `href` attribute of anchor elements links to an appropriate destination, so more pages of the site can be discovered. [Learn how to make links crawlable](https://support.google.com/webmasters/answer/9112205)"
+        },
+        {
+          "id": "robots-txt",
+          "title": "robots.txt is not valid",
+          "score": 0,
+          "displayValue": "14 errors found",
+          "description": "If your robots.txt file is malformed, crawlers may not be able to understand how you want your website to be crawled or indexed. [Learn more about robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
+        },
+        {
+          "id": "dom-size-insight",
+          "title": "Optimize DOM size",
+          "score": 0,
+          "displayValue": "",
+          "description": "A large DOM can increase the duration of style calculations and layout reflows, impacting page responsiveness. A large DOM will also increase memory usage. [Learn how to avoid an excessive DOM size](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)."
+        },
+        {
+          "id": "forced-reflow-insight",
+          "title": "Forced reflow",
+          "score": 0,
+          "displayValue": "",
+          "description": "Many APIs, typically reading layout geometry, force the rendering engine to pause script execution in order to calculate the style and layout. Learn more about [forced reflow](https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing#avoid-forced-synchronous-layouts) and its mitigations."
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0,
+          "displayValue": "Est savings of 7,651 KiB",
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. [Learn more about optimizing image size](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)"
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "score": 0,
+          "displayValue": "",
+          "description": "Optimize LCP by making the LCP image [discoverable](https://web.dev/articles/optimize-lcp#1_eliminate_resource_load_delay) from the HTML immediately, and [avoiding lazy-loading](https://web.dev/articles/lcp-lazy-loading)"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "displayValue": "",
+          "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render blocking requests",
+          "score": 0,
+          "displayValue": "",
+          "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://web.dev/learn/performance/understanding-the-critical-path#render-blocking_resources) can move these network requests out of the critical path."
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "home",
+      "path": "/",
+      "run": 3,
+      "url": "http://127.0.0.1:4173/",
+      "fetchTime": "2026-10-03T21:45:46.140Z",
+      "reportHtml": "desktop/home/run-03.report.html",
+      "reportJson": "desktop/home/run-03.report.json",
+      "categories": {
+        "performance": 76,
+        "accessibility": 91,
+        "best-practices": 100,
+        "seo": 67
+      },
+      "metrics": {
+        "lcpMs": 6339.70955,
+        "cls": 0,
+        "tbtMs": 17
+      },
+      "lcpElement": {
+        "label": "NFT cover",
+        "selector": "main.space-y-10 > section.flex > div.w-[540px] > img.h-[420px]",
+        "source": "/assets/Image-3LZgOEu9.png",
+        "phases": {
+          "TTFB": 126.56985,
+          "Load Delay": 3823.3389405801404,
+          "Load Time": 1256.1477118453763,
+          "Render Delay": 1133.653047574483
+        }
+      },
+      "assets": [
+        {
+          "url": "http://127.0.0.1:4173/assets/Image-3LZgOEu9.png",
+          "resourceType": "Image",
+          "transferBytes": 1885706,
+          "resourceBytes": 1885435,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image4-uhJLsIjn.png",
+          "resourceType": "Image",
+          "transferBytes": 1978871,
+          "resourceBytes": 1978600,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image3-4rfD07eb.png",
+          "resourceType": "Image",
+          "transferBytes": 2027607,
+          "resourceBytes": 2027336,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image2-CfwfEi4n.png",
+          "resourceType": "Image",
+          "transferBytes": 2068797,
+          "resourceBytes": 2068526,
+          "statusCode": 200
+        }
+      ],
+      "failedRequests": [],
+      "failedAudits": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.03,
+          "displayValue": "6.3 s",
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.22,
+          "displayValue": "6.4 s",
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://developer.chrome.com/docs/lighthouse/performance/interactive/)."
+        },
+        {
+          "id": "largest-contentful-paint-element",
+          "title": "Largest Contentful Paint element",
+          "score": 0,
+          "displayValue": "6,340 ms",
+          "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "unsized-images",
+          "title": "Image elements do not have explicit `width` and `height`",
+          "score": 0.5,
+          "displayValue": "",
+          "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn how to set image dimensions](https://web.dev/articles/optimize-cls#images_without_dimensions)"
+        },
+        {
+          "id": "prioritize-lcp-image",
+          "title": "Preload Largest Contentful Paint image",
+          "score": 0,
+          "displayValue": "Est savings of 490 ms",
+          "description": "If the LCP element is dynamically added to the page, you should preload the image in order to improve LCP. [Learn more about preloading LCP elements](https://web.dev/articles/optimize-lcp#optimize_when_the_resource_is_discovered)."
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements do not have `[alt]` attributes",
+          "score": 0,
+          "displayValue": "",
+          "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about the `alt` attribute](https://dequeuniversity.com/rules/axe/4.10/image-alt)."
+        },
+        {
+          "id": "label",
+          "title": "Form elements do not have associated labels",
+          "score": 0,
+          "displayValue": "",
+          "description": "Labels ensure that form controls are announced properly by assistive technologies, like screen readers. [Learn more about form element labels](https://dequeuniversity.com/rules/axe/4.10/label)."
+        },
+        {
+          "id": "total-byte-weight",
+          "title": "Avoid enormous network payloads",
+          "score": 0.5,
+          "displayValue": "Total size was 7,929 KiB",
+          "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn how to reduce payload sizes](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
+        },
+        {
+          "id": "render-blocking-resources",
+          "title": "Eliminate render-blocking resources",
+          "score": 0.5,
+          "displayValue": "Est savings of 0 ms",
+          "description": "Resources are blocking the first paint of your page. Consider delivering critical JS/CSS inline and deferring all non-critical JS/styles. [Learn how to eliminate render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)."
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 58 KiB",
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "modern-image-formats",
+          "title": "Serve images in next-gen formats",
+          "score": 0,
+          "displayValue": "Est savings of 7,196 KiB",
+          "description": "Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more about modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)."
+        },
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "score": 0,
+          "displayValue": "Est savings of 7,207 KiB",
+          "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn how to size images](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)."
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "score": 0,
+          "displayValue": "",
+          "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about the meta description](https://developer.chrome.com/docs/lighthouse/seo/meta-description/)."
+        },
+        {
+          "id": "crawlable-anchors",
+          "title": "Links are not crawlable",
+          "score": 0,
+          "displayValue": "",
+          "description": "Search engines may use `href` attributes on links to crawl websites. Ensure that the `href` attribute of anchor elements links to an appropriate destination, so more pages of the site can be discovered. [Learn how to make links crawlable](https://support.google.com/webmasters/answer/9112205)"
+        },
+        {
+          "id": "robots-txt",
+          "title": "robots.txt is not valid",
+          "score": 0,
+          "displayValue": "14 errors found",
+          "description": "If your robots.txt file is malformed, crawlers may not be able to understand how you want your website to be crawled or indexed. [Learn more about robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
+        },
+        {
+          "id": "dom-size-insight",
+          "title": "Optimize DOM size",
+          "score": 0,
+          "displayValue": "",
+          "description": "A large DOM can increase the duration of style calculations and layout reflows, impacting page responsiveness. A large DOM will also increase memory usage. [Learn how to avoid an excessive DOM size](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)."
+        },
+        {
+          "id": "forced-reflow-insight",
+          "title": "Forced reflow",
+          "score": 0,
+          "displayValue": "",
+          "description": "Many APIs, typically reading layout geometry, force the rendering engine to pause script execution in order to calculate the style and layout. Learn more about [forced reflow](https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing#avoid-forced-synchronous-layouts) and its mitigations."
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0,
+          "displayValue": "Est savings of 7,651 KiB",
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. [Learn more about optimizing image size](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)"
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "score": 0,
+          "displayValue": "",
+          "description": "Optimize LCP by making the LCP image [discoverable](https://web.dev/articles/optimize-lcp#1_eliminate_resource_load_delay) from the HTML immediately, and [avoiding lazy-loading](https://web.dev/articles/lcp-lazy-loading)"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "displayValue": "",
+          "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render blocking requests",
+          "score": 0,
+          "displayValue": "",
+          "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://web.dev/learn/performance/understanding-the-critical-path#render-blocking_resources) can move these network requests out of the critical path."
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "nft-detail",
+      "path": "/nft/1",
+      "run": 1,
+      "url": "http://127.0.0.1:4173/nft/1",
+      "fetchTime": "2026-10-03T21:46:01.324Z",
+      "reportHtml": "desktop/nft-detail/run-01.report.html",
+      "reportJson": "desktop/nft-detail/run-01.report.json",
+      "categories": {
+        "performance": 78,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 83
+      },
+      "metrics": {
+        "lcpMs": 4435.5928,
+        "cls": 0,
+        "tbtMs": 0
+      },
+      "lcpElement": {
+        "label": "Emerald Ape #042",
+        "selector": "main > section.grid > div.relative > img.aspect-square",
+        "source": "/assets/Image-3LZgOEu9.png",
+        "phases": {
+          "TTFB": 125.1976,
+          "Load Delay": 1643.7825635458137,
+          "Load Time": 394.1273569634852,
+          "Render Delay": 2272.4852794907015
+        }
+      },
+      "assets": [
+        {
+          "url": "http://127.0.0.1:4173/assets/Image-3LZgOEu9.png",
+          "resourceType": "Image",
+          "transferBytes": 1885706,
+          "resourceBytes": 1885435,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image2-CfwfEi4n.png",
+          "resourceType": "Image",
+          "transferBytes": 2068797,
+          "resourceBytes": 2068526,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image3-4rfD07eb.png",
+          "resourceType": "Image",
+          "transferBytes": 2027607,
+          "resourceBytes": 2027336,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image4-uhJLsIjn.png",
+          "resourceType": "Image",
+          "transferBytes": 1978871,
+          "resourceBytes": 1978600,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/geist-latin-wght-normal-BgDaEnEv.woff2",
+          "resourceType": "Font",
+          "transferBytes": 29720,
+          "resourceBytes": 29400,
+          "statusCode": 200
+        }
+      ],
+      "failedRequests": [],
+      "failedAudits": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.12,
+          "displayValue": "4.4 s",
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.46,
+          "displayValue": "4.7 s",
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://developer.chrome.com/docs/lighthouse/performance/interactive/)."
+        },
+        {
+          "id": "largest-contentful-paint-element",
+          "title": "Largest Contentful Paint element",
+          "score": 0,
+          "displayValue": "4,440 ms",
+          "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "prioritize-lcp-image",
+          "title": "Preload Largest Contentful Paint image",
+          "score": 0,
+          "displayValue": "Est savings of 490 ms",
+          "description": "If the LCP element is dynamically added to the page, you should preload the image in order to improve LCP. [Learn more about preloading LCP elements](https://web.dev/articles/optimize-lcp#optimize_when_the_resource_is_discovered)."
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "title": "Elements with visible text labels do not have matching accessible names.",
+          "score": 0,
+          "displayValue": "",
+          "description": "Visible text labels that do not match the accessible name can result in a confusing experience for screen reader users. [Learn more about accessible names](https://dequeuniversity.com/rules/axe/4.10/label-content-name-mismatch)."
+        },
+        {
+          "id": "total-byte-weight",
+          "title": "Avoid enormous network payloads",
+          "score": 0.5,
+          "displayValue": "Total size was 7,956 KiB",
+          "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn how to reduce payload sizes](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
+        },
+        {
+          "id": "render-blocking-resources",
+          "title": "Eliminate render-blocking resources",
+          "score": 0.5,
+          "displayValue": "Est savings of 0 ms",
+          "description": "Resources are blocking the first paint of your page. Consider delivering critical JS/CSS inline and deferring all non-critical JS/styles. [Learn how to eliminate render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)."
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 65 KiB",
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "modern-image-formats",
+          "title": "Serve images in next-gen formats",
+          "score": 0,
+          "displayValue": "Est savings of 7,196 KiB",
+          "description": "Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more about modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)."
+        },
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "score": 0,
+          "displayValue": "Est savings of 7,250 KiB",
+          "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn how to size images](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)."
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "score": 0,
+          "displayValue": "",
+          "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about the meta description](https://developer.chrome.com/docs/lighthouse/seo/meta-description/)."
+        },
+        {
+          "id": "robots-txt",
+          "title": "robots.txt is not valid",
+          "score": 0,
+          "displayValue": "14 errors found",
+          "description": "If your robots.txt file is malformed, crawlers may not be able to understand how you want your website to be crawled or indexed. [Learn more about robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
+        },
+        {
+          "id": "dom-size-insight",
+          "title": "Optimize DOM size",
+          "score": 0,
+          "displayValue": "",
+          "description": "A large DOM can increase the duration of style calculations and layout reflows, impacting page responsiveness. A large DOM will also increase memory usage. [Learn how to avoid an excessive DOM size](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)."
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0,
+          "displayValue": "Est savings of 7,698 KiB",
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. [Learn more about optimizing image size](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)"
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "score": 0,
+          "displayValue": "",
+          "description": "Optimize LCP by making the LCP image [discoverable](https://web.dev/articles/optimize-lcp#1_eliminate_resource_load_delay) from the HTML immediately, and [avoiding lazy-loading](https://web.dev/articles/lcp-lazy-loading)"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "displayValue": "",
+          "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render blocking requests",
+          "score": 0,
+          "displayValue": "",
+          "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://web.dev/learn/performance/understanding-the-critical-path#render-blocking_resources) can move these network requests out of the critical path."
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "nft-detail",
+      "path": "/nft/1",
+      "run": 2,
+      "url": "http://127.0.0.1:4173/nft/1",
+      "fetchTime": "2026-10-03T21:46:18.581Z",
+      "reportHtml": "desktop/nft-detail/run-02.report.html",
+      "reportJson": "desktop/nft-detail/run-02.report.json",
+      "categories": {
+        "performance": 78,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 83
+      },
+      "metrics": {
+        "lcpMs": 4434.30775,
+        "cls": 0,
+        "tbtMs": 0
+      },
+      "lcpElement": {
+        "label": "Emerald Ape #042",
+        "selector": "main > section.grid > div.relative > img.aspect-square",
+        "source": "/assets/Image-3LZgOEu9.png",
+        "phases": {
+          "TTFB": 124.76925,
+          "Load Delay": 1631.089695263847,
+          "Load Time": 464.1699322124705,
+          "Render Delay": 2214.2788725236824
+        }
+      },
+      "assets": [
+        {
+          "url": "http://127.0.0.1:4173/assets/Image-3LZgOEu9.png",
+          "resourceType": "Image",
+          "transferBytes": 1885706,
+          "resourceBytes": 1885435,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image2-CfwfEi4n.png",
+          "resourceType": "Image",
+          "transferBytes": 2068797,
+          "resourceBytes": 2068526,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image3-4rfD07eb.png",
+          "resourceType": "Image",
+          "transferBytes": 2027607,
+          "resourceBytes": 2027336,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image4-uhJLsIjn.png",
+          "resourceType": "Image",
+          "transferBytes": 1978871,
+          "resourceBytes": 1978600,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/geist-latin-wght-normal-BgDaEnEv.woff2",
+          "resourceType": "Font",
+          "transferBytes": 29720,
+          "resourceBytes": 29400,
+          "statusCode": 200
+        }
+      ],
+      "failedRequests": [],
+      "failedAudits": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.12,
+          "displayValue": "4.4 s",
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.46,
+          "displayValue": "4.7 s",
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://developer.chrome.com/docs/lighthouse/performance/interactive/)."
+        },
+        {
+          "id": "largest-contentful-paint-element",
+          "title": "Largest Contentful Paint element",
+          "score": 0,
+          "displayValue": "4,430 ms",
+          "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "prioritize-lcp-image",
+          "title": "Preload Largest Contentful Paint image",
+          "score": 0,
+          "displayValue": "Est savings of 480 ms",
+          "description": "If the LCP element is dynamically added to the page, you should preload the image in order to improve LCP. [Learn more about preloading LCP elements](https://web.dev/articles/optimize-lcp#optimize_when_the_resource_is_discovered)."
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "title": "Elements with visible text labels do not have matching accessible names.",
+          "score": 0,
+          "displayValue": "",
+          "description": "Visible text labels that do not match the accessible name can result in a confusing experience for screen reader users. [Learn more about accessible names](https://dequeuniversity.com/rules/axe/4.10/label-content-name-mismatch)."
+        },
+        {
+          "id": "total-byte-weight",
+          "title": "Avoid enormous network payloads",
+          "score": 0.5,
+          "displayValue": "Total size was 7,956 KiB",
+          "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn how to reduce payload sizes](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
+        },
+        {
+          "id": "render-blocking-resources",
+          "title": "Eliminate render-blocking resources",
+          "score": 0.5,
+          "displayValue": "Est savings of 0 ms",
+          "description": "Resources are blocking the first paint of your page. Consider delivering critical JS/CSS inline and deferring all non-critical JS/styles. [Learn how to eliminate render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)."
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 65 KiB",
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "modern-image-formats",
+          "title": "Serve images in next-gen formats",
+          "score": 0,
+          "displayValue": "Est savings of 7,196 KiB",
+          "description": "Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more about modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)."
+        },
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "score": 0,
+          "displayValue": "Est savings of 7,250 KiB",
+          "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn how to size images](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)."
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "score": 0,
+          "displayValue": "",
+          "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about the meta description](https://developer.chrome.com/docs/lighthouse/seo/meta-description/)."
+        },
+        {
+          "id": "robots-txt",
+          "title": "robots.txt is not valid",
+          "score": 0,
+          "displayValue": "14 errors found",
+          "description": "If your robots.txt file is malformed, crawlers may not be able to understand how you want your website to be crawled or indexed. [Learn more about robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
+        },
+        {
+          "id": "dom-size-insight",
+          "title": "Optimize DOM size",
+          "score": 0,
+          "displayValue": "",
+          "description": "A large DOM can increase the duration of style calculations and layout reflows, impacting page responsiveness. A large DOM will also increase memory usage. [Learn how to avoid an excessive DOM size](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)."
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0,
+          "displayValue": "Est savings of 7,698 KiB",
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. [Learn more about optimizing image size](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)"
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "score": 0,
+          "displayValue": "",
+          "description": "Optimize LCP by making the LCP image [discoverable](https://web.dev/articles/optimize-lcp#1_eliminate_resource_load_delay) from the HTML immediately, and [avoiding lazy-loading](https://web.dev/articles/lcp-lazy-loading)"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "displayValue": "",
+          "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render blocking requests",
+          "score": 0,
+          "displayValue": "",
+          "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://web.dev/learn/performance/understanding-the-critical-path#render-blocking_resources) can move these network requests out of the critical path."
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "nft-detail",
+      "path": "/nft/1",
+      "run": 3,
+      "url": "http://127.0.0.1:4173/nft/1",
+      "fetchTime": "2026-10-03T21:46:35.691Z",
+      "reportHtml": "desktop/nft-detail/run-03.report.html",
+      "reportJson": "desktop/nft-detail/run-03.report.json",
+      "categories": {
+        "performance": 78,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 83
+      },
+      "metrics": {
+        "lcpMs": 4411.97135,
+        "cls": 0,
+        "tbtMs": 0
+      },
+      "lcpElement": {
+        "label": "Emerald Ape #042",
+        "selector": "main > section.grid > div.relative > img.aspect-square",
+        "source": "/assets/Image-3LZgOEu9.png",
+        "phases": {
+          "TTFB": 126.99045,
+          "Load Delay": 1670.9708926816645,
+          "Load Time": 450.91608909900697,
+          "Render Delay": 2163.0939182193283
+        }
+      },
+      "assets": [
+        {
+          "url": "http://127.0.0.1:4173/assets/Image-3LZgOEu9.png",
+          "resourceType": "Image",
+          "transferBytes": 1885706,
+          "resourceBytes": 1885435,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image2-CfwfEi4n.png",
+          "resourceType": "Image",
+          "transferBytes": 2068797,
+          "resourceBytes": 2068526,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image3-4rfD07eb.png",
+          "resourceType": "Image",
+          "transferBytes": 2027607,
+          "resourceBytes": 2027336,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image4-uhJLsIjn.png",
+          "resourceType": "Image",
+          "transferBytes": 1978871,
+          "resourceBytes": 1978600,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/geist-latin-wght-normal-BgDaEnEv.woff2",
+          "resourceType": "Font",
+          "transferBytes": 29720,
+          "resourceBytes": 29400,
+          "statusCode": 200
+        }
+      ],
+      "failedRequests": [],
+      "failedAudits": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.13,
+          "displayValue": "4.4 s",
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.46,
+          "displayValue": "4.7 s",
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://developer.chrome.com/docs/lighthouse/performance/interactive/)."
+        },
+        {
+          "id": "largest-contentful-paint-element",
+          "title": "Largest Contentful Paint element",
+          "score": 0,
+          "displayValue": "4,410 ms",
+          "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "prioritize-lcp-image",
+          "title": "Preload Largest Contentful Paint image",
+          "score": 0,
+          "displayValue": "Est savings of 460 ms",
+          "description": "If the LCP element is dynamically added to the page, you should preload the image in order to improve LCP. [Learn more about preloading LCP elements](https://web.dev/articles/optimize-lcp#optimize_when_the_resource_is_discovered)."
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "title": "Elements with visible text labels do not have matching accessible names.",
+          "score": 0,
+          "displayValue": "",
+          "description": "Visible text labels that do not match the accessible name can result in a confusing experience for screen reader users. [Learn more about accessible names](https://dequeuniversity.com/rules/axe/4.10/label-content-name-mismatch)."
+        },
+        {
+          "id": "total-byte-weight",
+          "title": "Avoid enormous network payloads",
+          "score": 0.5,
+          "displayValue": "Total size was 7,956 KiB",
+          "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn how to reduce payload sizes](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
+        },
+        {
+          "id": "render-blocking-resources",
+          "title": "Eliminate render-blocking resources",
+          "score": 0.5,
+          "displayValue": "Est savings of 0 ms",
+          "description": "Resources are blocking the first paint of your page. Consider delivering critical JS/CSS inline and deferring all non-critical JS/styles. [Learn how to eliminate render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)."
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 65 KiB",
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "modern-image-formats",
+          "title": "Serve images in next-gen formats",
+          "score": 0,
+          "displayValue": "Est savings of 7,196 KiB",
+          "description": "Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more about modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)."
+        },
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "score": 0,
+          "displayValue": "Est savings of 7,250 KiB",
+          "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn how to size images](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)."
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "score": 0,
+          "displayValue": "",
+          "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about the meta description](https://developer.chrome.com/docs/lighthouse/seo/meta-description/)."
+        },
+        {
+          "id": "robots-txt",
+          "title": "robots.txt is not valid",
+          "score": 0,
+          "displayValue": "14 errors found",
+          "description": "If your robots.txt file is malformed, crawlers may not be able to understand how you want your website to be crawled or indexed. [Learn more about robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
+        },
+        {
+          "id": "dom-size-insight",
+          "title": "Optimize DOM size",
+          "score": 0,
+          "displayValue": "",
+          "description": "A large DOM can increase the duration of style calculations and layout reflows, impacting page responsiveness. A large DOM will also increase memory usage. [Learn how to avoid an excessive DOM size](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)."
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0,
+          "displayValue": "Est savings of 7,698 KiB",
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. [Learn more about optimizing image size](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)"
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "score": 0,
+          "displayValue": "",
+          "description": "Optimize LCP by making the LCP image [discoverable](https://web.dev/articles/optimize-lcp#1_eliminate_resource_load_delay) from the HTML immediately, and [avoiding lazy-loading](https://web.dev/articles/lcp-lazy-loading)"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "displayValue": "",
+          "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render blocking requests",
+          "score": 0,
+          "displayValue": "",
+          "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://web.dev/learn/performance/understanding-the-critical-path#render-blocking_resources) can move these network requests out of the critical path."
+        }
+      ]
+    }
+  ],
+  "medians": [
+    {
+      "profile": "mobile",
+      "page": "home",
+      "path": "/",
+      "scenario": "Default marketplace state; built-in NFT mock catalog; no search/filter changes.",
+      "samples": [
+        {
+          "run": 1,
+          "categories": {
+            "performance": 74,
+            "accessibility": 95,
+            "best-practices": 96,
+            "seo": 83
+          },
+          "metrics": {
+            "lcpMs": 42967.30375,
+            "cls": 0,
+            "tbtMs": 18
+          },
+          "lcpElement": {
+            "label": "Emerald Ape #042",
+            "selector": "article.min-w-0 > div.relative > button.block > img.aspect-square",
+            "source": "/assets/Image-3LZgOEu9.png",
+            "phases": {
+              "TTFB": 457.10125,
+              "Load Delay": 11068.96742756622,
+              "Load Time": 3990.5299407849016,
+              "Render Delay": 27450.70513164888
+            }
+          },
+          "reportHtml": "mobile/home/run-01.report.html",
+          "reportJson": "mobile/home/run-01.report.json"
+        },
+        {
+          "run": 2,
+          "categories": {
+            "performance": 74,
+            "accessibility": 95,
+            "best-practices": 96,
+            "seo": 83
+          },
+          "metrics": {
+            "lcpMs": 43077.60015,
+            "cls": 0,
+            "tbtMs": 11
+          },
+          "lcpElement": {
+            "label": "Emerald Ape #042",
+            "selector": "article.min-w-0 > div.relative > button.block > img.aspect-square",
+            "source": "/assets/Image-3LZgOEu9.png",
+            "phases": {
+              "TTFB": 459.20005,
+              "Load Delay": 9770.182947376205,
+              "Load Time": 19114.965211266976,
+              "Render Delay": 13733.251941356819
+            }
+          },
+          "reportHtml": "mobile/home/run-02.report.html",
+          "reportJson": "mobile/home/run-02.report.json"
+        },
+        {
+          "run": 3,
+          "categories": {
+            "performance": 74,
+            "accessibility": 95,
+            "best-practices": 96,
+            "seo": 83
+          },
+          "metrics": {
+            "lcpMs": 42911.3637,
+            "cls": 0,
+            "tbtMs": 15
+          },
+          "lcpElement": {
+            "label": "Emerald Ape #042",
+            "selector": "article.min-w-0 > div.relative > button.block > img.aspect-square",
+            "source": "/assets/Image-3LZgOEu9.png",
+            "phases": {
+              "TTFB": 453.7879,
+              "Load Delay": 9868.442263555093,
+              "Load Time": 2959.0989659341176,
+              "Render Delay": 29630.03457051079
+            }
+          },
+          "reportHtml": "mobile/home/run-03.report.html",
+          "reportJson": "mobile/home/run-03.report.json"
+        }
+      ],
+      "categoryMedians": {
+        "performance": 74,
+        "accessibility": 95,
+        "best-practices": 96,
+        "seo": 83
+      },
+      "metricMedians": {
+        "lcpMs": 42967,
+        "cls": 0,
+        "tbtMs": 15
+      },
+      "lcpElement": {
+        "label": "Emerald Ape #042",
+        "selector": "article.min-w-0 > div.relative > button.block > img.aspect-square",
+        "source": "/assets/Image-3LZgOEu9.png",
+        "phases": {
+          "TTFB": 457.10125,
+          "Load Delay": 11068.96742756622,
+          "Load Time": 3990.5299407849016,
+          "Render Delay": 27450.70513164888
+        }
+      },
+      "lcpPhases": {
+        "TTFB": 457,
+        "Load Delay": 9868,
+        "Load Time": 3991,
+        "Render Delay": 27451
+      },
+      "passedTargets": {
+        "performance": false,
+        "accessibility": true,
+        "best-practices": true,
+        "seo": false
+      },
+      "recurringIssues": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "43.0 s",
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "43.0 s",
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://developer.chrome.com/docs/lighthouse/performance/interactive/)."
+        },
+        {
+          "id": "largest-contentful-paint-element",
+          "title": "Largest Contentful Paint element",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "42,970 ms",
+          "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "prioritize-lcp-image",
+          "title": "Preload Largest Contentful Paint image",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "Est savings of 2,450 ms",
+          "description": "If the LCP element is dynamically added to the page, you should preload the image in order to improve LCP. [Learn more about preloading LCP elements](https://web.dev/articles/optimize-lcp#optimize_when_the_resource_is_discovered)."
+        },
+        {
+          "id": "aria-prohibited-attr",
+          "title": "Elements use prohibited ARIA attributes",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "",
+          "description": "Using ARIA attributes in roles where they are prohibited can mean that important information is not communicated to users of assistive technologies. [Learn more about prohibited ARIA roles](https://dequeuniversity.com/rules/axe/4.10/aria-prohibited-attr)."
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "Est savings of 71 KiB",
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "modern-image-formats",
+          "title": "Serve images in next-gen formats",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "Est savings of 7,196 KiB",
+          "description": "Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more about modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)."
+        },
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "Est savings of 7,356 KiB",
+          "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn how to size images](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)."
+        }
+      ],
+      "assets": [
+        {
+          "url": "http://127.0.0.1:4173/assets/Image-3LZgOEu9.png",
+          "resourceType": "Image",
+          "transferBytes": 1885706,
+          "resourceBytes": 1885435,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image2-CfwfEi4n.png",
+          "resourceType": "Image",
+          "transferBytes": 2068797,
+          "resourceBytes": 2068526,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image3-4rfD07eb.png",
+          "resourceType": "Image",
+          "transferBytes": 2027607,
+          "resourceBytes": 2027336,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image4-uhJLsIjn.png",
+          "resourceType": "Image",
+          "transferBytes": 1978871,
+          "resourceBytes": 1978600,
+          "statusCode": 200
+        }
+      ],
+      "uniqueImageTransferBytes": 7960981,
+      "uniqueFontTransferBytes": 0,
+      "failedRequests": []
+    },
+    {
+      "profile": "mobile",
+      "page": "nft-detail",
+      "path": "/nft/1",
+      "scenario": "Direct-load desktop NFT detail route for Emerald Ape #042 (mock NFT id 1).",
+      "samples": [
+        {
+          "run": 1,
+          "categories": {
+            "performance": 73,
+            "accessibility": 100,
+            "best-practices": 96,
+            "seo": 83
+          },
+          "metrics": {
+            "lcpMs": 26043.6159,
+            "cls": 0,
+            "tbtMs": 91
+          },
+          "lcpElement": {
+            "label": "Emerald Ape #042",
+            "selector": "main > section.grid > div.relative > img.aspect-square",
+            "source": "/assets/Image-3LZgOEu9.png",
+            "phases": {
+              "TTFB": 456.2053,
+              "Load Delay": 11452.003033348155,
+              "Load Time": 2575.5234380497277,
+              "Render Delay": 11559.884128602118
+            }
+          },
+          "reportHtml": "mobile/nft-detail/run-01.report.html",
+          "reportJson": "mobile/nft-detail/run-01.report.json"
+        },
+        {
+          "run": 2,
+          "categories": {
+            "performance": 74,
+            "accessibility": 100,
+            "best-practices": 96,
+            "seo": 83
+          },
+          "metrics": {
+            "lcpMs": 26103.6688,
+            "cls": 0,
+            "tbtMs": 75
+          },
+          "lcpElement": {
+            "label": "Emerald Ape #042",
+            "selector": "main > section.grid > div.relative > img.aspect-square",
+            "source": "/assets/Image-3LZgOEu9.png",
+            "phases": {
+              "TTFB": 457.8896,
+              "Load Delay": 9658.138453010624,
+              "Load Time": 4487.880652752587,
+              "Render Delay": 11499.760094236788
+            }
+          },
+          "reportHtml": "mobile/nft-detail/run-02.report.html",
+          "reportJson": "mobile/nft-detail/run-02.report.json"
+        },
+        {
+          "run": 3,
+          "categories": {
+            "performance": 73,
+            "accessibility": 100,
+            "best-practices": 96,
+            "seo": 83
+          },
+          "metrics": {
+            "lcpMs": 26035.604699999996,
+            "cls": 0,
+            "tbtMs": 42
+          },
+          "lcpElement": {
+            "label": "Emerald Ape #042",
+            "selector": "main > section.grid > div.relative > img.aspect-square",
+            "source": "/assets/Image-3LZgOEu9.png",
+            "phases": {
+              "TTFB": 453.5349,
+              "Load Delay": 9453.569985121294,
+              "Load Time": 3026.9313268889746,
+              "Render Delay": 13101.568487989727
+            }
+          },
+          "reportHtml": "mobile/nft-detail/run-03.report.html",
+          "reportJson": "mobile/nft-detail/run-03.report.json"
+        }
+      ],
+      "categoryMedians": {
+        "performance": 73,
+        "accessibility": 100,
+        "best-practices": 96,
+        "seo": 83
+      },
+      "metricMedians": {
+        "lcpMs": 26044,
+        "cls": 0,
+        "tbtMs": 75
+      },
+      "lcpElement": {
+        "label": "Emerald Ape #042",
+        "selector": "main > section.grid > div.relative > img.aspect-square",
+        "source": "/assets/Image-3LZgOEu9.png",
+        "phases": {
+          "TTFB": 456.2053,
+          "Load Delay": 11452.003033348155,
+          "Load Time": 2575.5234380497277,
+          "Render Delay": 11559.884128602118
+        }
+      },
+      "lcpPhases": {
+        "TTFB": 456,
+        "Load Delay": 9658,
+        "Load Time": 3027,
+        "Render Delay": 11560
+      },
+      "passedTargets": {
+        "performance": false,
+        "accessibility": true,
+        "best-practices": true,
+        "seo": false
+      },
+      "recurringIssues": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "26.0 s",
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "27.5 s",
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://developer.chrome.com/docs/lighthouse/performance/interactive/)."
+        },
+        {
+          "id": "largest-contentful-paint-element",
+          "title": "Largest Contentful Paint element",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "26,040 ms",
+          "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "prioritize-lcp-image",
+          "title": "Preload Largest Contentful Paint image",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "Est savings of 2,410 ms",
+          "description": "If the LCP element is dynamically added to the page, you should preload the image in order to improve LCP. [Learn more about preloading LCP elements](https://web.dev/articles/optimize-lcp#optimize_when_the_resource_is_discovered)."
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "title": "Elements with visible text labels do not have matching accessible names.",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "",
+          "description": "Visible text labels that do not match the accessible name can result in a confusing experience for screen reader users. [Learn more about accessible names](https://dequeuniversity.com/rules/axe/4.10/label-content-name-mismatch)."
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "Est savings of 65 KiB",
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "modern-image-formats",
+          "title": "Serve images in next-gen formats",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "Est savings of 7,196 KiB",
+          "description": "Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more about modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)."
+        },
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "Est savings of 7,070 KiB",
+          "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn how to size images](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)."
+        }
+      ],
+      "assets": [
+        {
+          "url": "http://127.0.0.1:4173/assets/Image-3LZgOEu9.png",
+          "resourceType": "Image",
+          "transferBytes": 1885706,
+          "resourceBytes": 1885435,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image2-CfwfEi4n.png",
+          "resourceType": "Image",
+          "transferBytes": 2068797,
+          "resourceBytes": 2068526,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image3-4rfD07eb.png",
+          "resourceType": "Image",
+          "transferBytes": 2027607,
+          "resourceBytes": 2027336,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image4-uhJLsIjn.png",
+          "resourceType": "Image",
+          "transferBytes": 1978871,
+          "resourceBytes": 1978600,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/geist-latin-wght-normal-BgDaEnEv.woff2",
+          "resourceType": "Font",
+          "transferBytes": 29720,
+          "resourceBytes": 29400,
+          "statusCode": 200
+        }
+      ],
+      "uniqueImageTransferBytes": 7960981,
+      "uniqueFontTransferBytes": 29720,
+      "failedRequests": []
+    },
+    {
+      "profile": "desktop",
+      "page": "home",
+      "path": "/",
+      "scenario": "Default marketplace state; built-in NFT mock catalog; no search/filter changes.",
+      "samples": [
+        {
+          "run": 1,
+          "categories": {
+            "performance": 76,
+            "accessibility": 91,
+            "best-practices": 100,
+            "seo": 67
+          },
+          "metrics": {
+            "lcpMs": 6340.65515,
+            "cls": 0,
+            "tbtMs": 11
+          },
+          "lcpElement": {
+            "label": "NFT cover",
+            "selector": "main.space-y-10 > section.flex > div.w-[540px] > img.h-[420px]",
+            "source": "/assets/Image-3LZgOEu9.png",
+            "phases": {
+              "TTFB": 126.88505,
+              "Load Delay": 3762.2236570502114,
+              "Load Time": 899.8322429040295,
+              "Render Delay": 1551.7142000457588
+            }
+          },
+          "reportHtml": "desktop/home/run-01.report.html",
+          "reportJson": "desktop/home/run-01.report.json"
+        },
+        {
+          "run": 2,
+          "categories": {
+            "performance": 76,
+            "accessibility": 91,
+            "best-practices": 100,
+            "seo": 67
+          },
+          "metrics": {
+            "lcpMs": 6348.88465,
+            "cls": 0.0003353100099175814,
+            "tbtMs": 10
+          },
+          "lcpElement": {
+            "label": "NFT cover",
+            "selector": "main.space-y-10 > section.flex > div.w-[540px] > img.h-[420px]",
+            "source": "/assets/Image-3LZgOEu9.png",
+            "phases": {
+              "TTFB": 132.96155,
+              "Load Delay": 3414.1657021449328,
+              "Load Time": 1661.4402633017771,
+              "Render Delay": 1140.31713455329
+            }
+          },
+          "reportHtml": "desktop/home/run-02.report.html",
+          "reportJson": "desktop/home/run-02.report.json"
+        },
+        {
+          "run": 3,
+          "categories": {
+            "performance": 76,
+            "accessibility": 91,
+            "best-practices": 100,
+            "seo": 67
+          },
+          "metrics": {
+            "lcpMs": 6339.70955,
+            "cls": 0,
+            "tbtMs": 17
+          },
+          "lcpElement": {
+            "label": "NFT cover",
+            "selector": "main.space-y-10 > section.flex > div.w-[540px] > img.h-[420px]",
+            "source": "/assets/Image-3LZgOEu9.png",
+            "phases": {
+              "TTFB": 126.56985,
+              "Load Delay": 3823.3389405801404,
+              "Load Time": 1256.1477118453763,
+              "Render Delay": 1133.653047574483
+            }
+          },
+          "reportHtml": "desktop/home/run-03.report.html",
+          "reportJson": "desktop/home/run-03.report.json"
+        }
+      ],
+      "categoryMedians": {
+        "performance": 76,
+        "accessibility": 91,
+        "best-practices": 100,
+        "seo": 67
+      },
+      "metricMedians": {
+        "lcpMs": 6341,
+        "cls": 0,
+        "tbtMs": 11
+      },
+      "lcpElement": {
+        "label": "NFT cover",
+        "selector": "main.space-y-10 > section.flex > div.w-[540px] > img.h-[420px]",
+        "source": "/assets/Image-3LZgOEu9.png",
+        "phases": {
+          "TTFB": 126.88505,
+          "Load Delay": 3762.2236570502114,
+          "Load Time": 899.8322429040295,
+          "Render Delay": 1551.7142000457588
+        }
+      },
+      "lcpPhases": {
+        "TTFB": 127,
+        "Load Delay": 3762,
+        "Load Time": 1256,
+        "Render Delay": 1140
+      },
+      "passedTargets": {
+        "performance": false,
+        "accessibility": false,
+        "best-practices": true,
+        "seo": false
+      },
+      "recurringIssues": [
+        {
+          "id": "largest-contentful-paint-element",
+          "title": "Largest Contentful Paint element",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "6,340 ms",
+          "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "prioritize-lcp-image",
+          "title": "Preload Largest Contentful Paint image",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "Est savings of 490 ms",
+          "description": "If the LCP element is dynamically added to the page, you should preload the image in order to improve LCP. [Learn more about preloading LCP elements](https://web.dev/articles/optimize-lcp#optimize_when_the_resource_is_discovered)."
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements do not have `[alt]` attributes",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "",
+          "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about the `alt` attribute](https://dequeuniversity.com/rules/axe/4.10/image-alt)."
+        },
+        {
+          "id": "label",
+          "title": "Form elements do not have associated labels",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "",
+          "description": "Labels ensure that form controls are announced properly by assistive technologies, like screen readers. [Learn more about form element labels](https://dequeuniversity.com/rules/axe/4.10/label)."
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "Est savings of 58 KiB",
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "modern-image-formats",
+          "title": "Serve images in next-gen formats",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "Est savings of 7,196 KiB",
+          "description": "Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more about modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)."
+        },
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "Est savings of 7,207 KiB",
+          "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn how to size images](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)."
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "",
+          "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about the meta description](https://developer.chrome.com/docs/lighthouse/seo/meta-description/)."
+        }
+      ],
+      "assets": [
+        {
+          "url": "http://127.0.0.1:4173/assets/Image-3LZgOEu9.png",
+          "resourceType": "Image",
+          "transferBytes": 1885706,
+          "resourceBytes": 1885435,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image4-uhJLsIjn.png",
+          "resourceType": "Image",
+          "transferBytes": 1978871,
+          "resourceBytes": 1978600,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image3-4rfD07eb.png",
+          "resourceType": "Image",
+          "transferBytes": 2027607,
+          "resourceBytes": 2027336,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image2-CfwfEi4n.png",
+          "resourceType": "Image",
+          "transferBytes": 2068797,
+          "resourceBytes": 2068526,
+          "statusCode": 200
+        }
+      ],
+      "uniqueImageTransferBytes": 7960981,
+      "uniqueFontTransferBytes": 0,
+      "failedRequests": []
+    },
+    {
+      "profile": "desktop",
+      "page": "nft-detail",
+      "path": "/nft/1",
+      "scenario": "Direct-load desktop NFT detail route for Emerald Ape #042 (mock NFT id 1).",
+      "samples": [
+        {
+          "run": 1,
+          "categories": {
+            "performance": 78,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 83
+          },
+          "metrics": {
+            "lcpMs": 4435.5928,
+            "cls": 0,
+            "tbtMs": 0
+          },
+          "lcpElement": {
+            "label": "Emerald Ape #042",
+            "selector": "main > section.grid > div.relative > img.aspect-square",
+            "source": "/assets/Image-3LZgOEu9.png",
+            "phases": {
+              "TTFB": 125.1976,
+              "Load Delay": 1643.7825635458137,
+              "Load Time": 394.1273569634852,
+              "Render Delay": 2272.4852794907015
+            }
+          },
+          "reportHtml": "desktop/nft-detail/run-01.report.html",
+          "reportJson": "desktop/nft-detail/run-01.report.json"
+        },
+        {
+          "run": 2,
+          "categories": {
+            "performance": 78,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 83
+          },
+          "metrics": {
+            "lcpMs": 4434.30775,
+            "cls": 0,
+            "tbtMs": 0
+          },
+          "lcpElement": {
+            "label": "Emerald Ape #042",
+            "selector": "main > section.grid > div.relative > img.aspect-square",
+            "source": "/assets/Image-3LZgOEu9.png",
+            "phases": {
+              "TTFB": 124.76925,
+              "Load Delay": 1631.089695263847,
+              "Load Time": 464.1699322124705,
+              "Render Delay": 2214.2788725236824
+            }
+          },
+          "reportHtml": "desktop/nft-detail/run-02.report.html",
+          "reportJson": "desktop/nft-detail/run-02.report.json"
+        },
+        {
+          "run": 3,
+          "categories": {
+            "performance": 78,
+            "accessibility": 100,
+            "best-practices": 100,
+            "seo": 83
+          },
+          "metrics": {
+            "lcpMs": 4411.97135,
+            "cls": 0,
+            "tbtMs": 0
+          },
+          "lcpElement": {
+            "label": "Emerald Ape #042",
+            "selector": "main > section.grid > div.relative > img.aspect-square",
+            "source": "/assets/Image-3LZgOEu9.png",
+            "phases": {
+              "TTFB": 126.99045,
+              "Load Delay": 1670.9708926816645,
+              "Load Time": 450.91608909900697,
+              "Render Delay": 2163.0939182193283
+            }
+          },
+          "reportHtml": "desktop/nft-detail/run-03.report.html",
+          "reportJson": "desktop/nft-detail/run-03.report.json"
+        }
+      ],
+      "categoryMedians": {
+        "performance": 78,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 83
+      },
+      "metricMedians": {
+        "lcpMs": 4434,
+        "cls": 0,
+        "tbtMs": 0
+      },
+      "lcpElement": {
+        "label": "Emerald Ape #042",
+        "selector": "main > section.grid > div.relative > img.aspect-square",
+        "source": "/assets/Image-3LZgOEu9.png",
+        "phases": {
+          "TTFB": 125.1976,
+          "Load Delay": 1643.7825635458137,
+          "Load Time": 394.1273569634852,
+          "Render Delay": 2272.4852794907015
+        }
+      },
+      "lcpPhases": {
+        "TTFB": 125,
+        "Load Delay": 1644,
+        "Load Time": 451,
+        "Render Delay": 2214
+      },
+      "passedTargets": {
+        "performance": false,
+        "accessibility": true,
+        "best-practices": true,
+        "seo": false
+      },
+      "recurringIssues": [
+        {
+          "id": "largest-contentful-paint-element",
+          "title": "Largest Contentful Paint element",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "4,440 ms",
+          "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "prioritize-lcp-image",
+          "title": "Preload Largest Contentful Paint image",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "Est savings of 490 ms",
+          "description": "If the LCP element is dynamically added to the page, you should preload the image in order to improve LCP. [Learn more about preloading LCP elements](https://web.dev/articles/optimize-lcp#optimize_when_the_resource_is_discovered)."
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "title": "Elements with visible text labels do not have matching accessible names.",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "",
+          "description": "Visible text labels that do not match the accessible name can result in a confusing experience for screen reader users. [Learn more about accessible names](https://dequeuniversity.com/rules/axe/4.10/label-content-name-mismatch)."
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "Est savings of 65 KiB",
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "modern-image-formats",
+          "title": "Serve images in next-gen formats",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "Est savings of 7,196 KiB",
+          "description": "Image formats like WebP and AVIF often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more about modern image formats](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)."
+        },
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "Est savings of 7,250 KiB",
+          "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn how to size images](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)."
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "",
+          "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about the meta description](https://developer.chrome.com/docs/lighthouse/seo/meta-description/)."
+        },
+        {
+          "id": "robots-txt",
+          "title": "robots.txt is not valid",
+          "occurrences": 3,
+          "medianScore": 0,
+          "displayValue": "14 errors found",
+          "description": "If your robots.txt file is malformed, crawlers may not be able to understand how you want your website to be crawled or indexed. [Learn more about robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
+        }
+      ],
+      "assets": [
+        {
+          "url": "http://127.0.0.1:4173/assets/Image-3LZgOEu9.png",
+          "resourceType": "Image",
+          "transferBytes": 1885706,
+          "resourceBytes": 1885435,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image2-CfwfEi4n.png",
+          "resourceType": "Image",
+          "transferBytes": 2068797,
+          "resourceBytes": 2068526,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image3-4rfD07eb.png",
+          "resourceType": "Image",
+          "transferBytes": 2027607,
+          "resourceBytes": 2027336,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/Image4-uhJLsIjn.png",
+          "resourceType": "Image",
+          "transferBytes": 1978871,
+          "resourceBytes": 1978600,
+          "statusCode": 200
+        },
+        {
+          "url": "http://127.0.0.1:4173/assets/geist-latin-wght-normal-BgDaEnEv.woff2",
+          "resourceType": "Font",
+          "transferBytes": 29720,
+          "resourceBytes": 29400,
+          "statusCode": 200
+        }
+      ],
+      "uniqueImageTransferBytes": 7960981,
+      "uniqueFontTransferBytes": 29720,
+      "failedRequests": []
+    }
+  ]
+}

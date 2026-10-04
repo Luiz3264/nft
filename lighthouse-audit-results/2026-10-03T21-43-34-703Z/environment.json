@@ -1,0 +1,42 @@
+{
+  "runId": "2026-10-03T21-43-34-703Z",
+  "configurationVersion": "1.0.0",
+  "configurationFile": "audit-config.json",
+  "buildFingerprint": "851746806974de948a7aadc10b5e0b2b28a6c5fa94bfc720189927ef64afff10",
+  "gitRevision": "unavailable",
+  "gitWorkingTree": "unavailable (workspace has no .git metadata)",
+  "gitStatus": "unavailable (workspace has no .git metadata)",
+  "tools": {
+    "lighthouse": "12.6.1",
+    "chrome-launcher": "0.13.4",
+    "vite": "8.3.2",
+    "@playwright/test": "1.63.0",
+    "chrome": "Chrome/152.0.7977.84"
+  },
+  "environment": {
+    "node": "v24.14.1",
+    "npm": "11.11.0",
+    "platform": "win32",
+    "release": "10.0.26200",
+    "arch": "x64",
+    "cpuCount": 8,
+    "cpuModels": [
+      "Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz"
+    ],
+    "totalMemoryBytes": 16928935936,
+    "locale": "en-US"
+  },
+  "execution": {
+    "startedAt": "2026-10-03T21:43:34.704Z",
+    "finishedAt": "2026-10-03T21:46:48.679Z",
+    "auditCount": 12,
+    "order": "sequential: mobile home, mobile NFT detail, desktop home, desktop NFT detail; three samples each",
+    "chromeFlags": [
+      "--headless=new",
+      "--no-first-run",
+      "--no-default-browser-check"
+    ],
+    "storageReset": true,
+    "appAssetsBlocked": false
+  }
+}

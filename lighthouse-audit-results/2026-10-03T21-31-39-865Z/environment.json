@@ -1,0 +1,42 @@
+{
+  "runId": "2026-10-03T21-31-39-865Z",
+  "configurationVersion": "1.0.0",
+  "configurationFile": "audit-config.json",
+  "buildFingerprint": "c4099123d7c3934266204f30c5a1d09830c7771c05a9906fac68eb4b9ac6d70c",
+  "gitRevision": "unavailable",
+  "gitWorkingTree": "dirty",
+  "gitStatus": "unavailable",
+  "tools": {
+    "lighthouse": "12.6.1",
+    "chrome-launcher": "0.13.4",
+    "vite": "8.3.2",
+    "@playwright/test": "1.63.0",
+    "chrome": "Chrome/152.0.7977.84"
+  },
+  "environment": {
+    "node": "v24.14.1",
+    "npm": "11.11.0",
+    "platform": "win32",
+    "release": "10.0.26200",
+    "arch": "x64",
+    "cpuCount": 8,
+    "cpuModels": [
+      "Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz"
+    ],
+    "totalMemoryBytes": 16928935936,
+    "locale": "en-US"
+  },
+  "execution": {
+    "startedAt": "2026-10-03T21:31:39.866Z",
+    "finishedAt": "2026-10-03T21:35:02.582Z",
+    "auditCount": 12,
+    "order": "sequential: mobile home, mobile NFT detail, desktop home, desktop NFT detail; three samples each",
+    "chromeFlags": [
+      "--headless=new",
+      "--no-first-run",
+      "--no-default-browser-check"
+    ],
+    "storageReset": true,
+    "appAssetsBlocked": false
+  }
+}
